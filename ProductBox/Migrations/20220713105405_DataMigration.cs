@@ -6,16 +6,16 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProductBox.Migrations
 {
-    public partial class Initial : Migration
+    public partial class DataMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
+            
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
+            
         }
     }
 }
