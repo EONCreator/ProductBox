@@ -1,1 +1,1 @@
-ProductBox
+ProductBox - приложение для управления складом
