@@ -29,7 +29,7 @@ namespace ProductBox.Services
                         await formFile.CopyToAsync(stream);
                     }
                 }
-                images.Add(new Image { Folder = "products", Src = formFile.FileName.Split('.')[0], Ext = formFile.FileName.Split('.')[1] });
+                images.Add(new Image { Folder = folder, Src = formFile.FileName.Split('.')[0], Ext = formFile.FileName.Split('.')[1] });
             }
 
             return images;
