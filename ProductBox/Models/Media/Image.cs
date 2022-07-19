@@ -8,5 +8,12 @@
         public string Ext { get; set; }
 
         public List<Product> Products { get; set; } = new();
+
+        public Image(string folder, string src, string ext)
+        {
+            Folder = folder;
+            Src = src;
+            Ext = ext;
+        }
     }
 }

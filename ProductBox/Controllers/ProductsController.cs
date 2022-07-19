@@ -55,7 +55,15 @@ namespace ProductBox.Controllers
 
             var product = new Product();
 
-            var images = await _imageManager.UploadImages(files, "images/products");
+            var sizes = new List<ImageSize>
+            {
+                new ImageSize { Name = "micro", Size = new SixLabors.ImageSharp.Size(10, 10) },
+                new ImageSize { Name = "small", Size = new SixLabors.ImageSharp.Size(6, 6) },
+                new ImageSize { Name = "medium", Size = new SixLabors.ImageSharp.Size(3, 3) },
+                new ImageSize { Name = "large", Size = new SixLabors.ImageSharp.Size(2, 2) }
+            };
+            var images = await _imageManager.UploadImages(files, "products", sizes);
+
             product.AddImages(images);
 
             product.SetName(model.Name);
@@ -78,8 +86,8 @@ namespace ProductBox.Controllers
             if (product == null)
                 return NotFound();
 
-            var addedImages = await _imageManager.UploadImages(files, "images/products");
-            var deletedImages = await _imageManager.DeleteImages(model.DeletedImageIds, "images/products");
+            var addedImages = await _imageManager.UploadImages(files, "products");
+            var deletedImages = await _imageManager.DeleteImages(model.DeletedImageIds, "products");
 
             product.AddImages(addedImages);
             product.RemoveImages(deletedImages);
