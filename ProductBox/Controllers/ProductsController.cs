@@ -116,35 +116,6 @@ namespace ProductBox.Controllers
             await _context.SaveChangesAsync();
         }
 
-
-        /*private void PopulateModel(Product model, IDictionary values) {
-            string NAME = nameof(Product.Name);
-            string DATE_CREATED = nameof(Product.DateCreated);
-            string DESCRIPTION = nameof(Product.Description);
-            string PRICE = nameof(Product.Price);
-            string QUANTITY = nameof(Product.Quantity);
-
-            if(values.Contains(NAME)) {
-                model.Name = Convert.ToString(values[NAME]);
-            }
-
-            if(values.Contains(DATE_CREATED)) {
-                model.DateCreated = Convert.ToDateTime(values[DATE_CREATED]);
-            }
-
-            if(values.Contains(DESCRIPTION)) {
-                model.Description = Convert.ToString(values[DESCRIPTION]);
-            }
-
-            if(values.Contains(PRICE)) {
-                model.Price = Convert.ToSingle(values[PRICE], CultureInfo.InvariantCulture);
-            }
-
-            if(values.Contains(QUANTITY)) {
-                model.Quantity = Convert.ToInt32(values[QUANTITY]);
-            }
-        }*/
-
         private string GetFullErrorMessage(ModelStateDictionary modelState) {
             var messages = new List<string>();
 
